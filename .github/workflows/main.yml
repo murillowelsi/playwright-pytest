@@ -34,9 +34,9 @@ jobs:
           poetry install
           poetry run playwright install
 
-      # - name: pre-commit
-      #   run: |
-      #     poetry run pre-commit run -a
+      - name: pre-commit
+        run: |
+          poetry run pre-commit run -a
 
       - name: pytest check
         run: |

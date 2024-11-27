@@ -4,9 +4,9 @@ from pages.page_objects.main_page import MainPage
 
 
 def test_main_banner(main_page: MainPage) -> None:
-    expected_banner = "Playwright"
+    expected_banner = 'Playwright'
     expected_banner_subtitle = (
-        "enables reliable end-to-end testing for modern web apps."
+        'enables reliable end-to-end testing for modern web apps.'
     )
 
     main_page.load()
