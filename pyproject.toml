@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "playwright-pytest"
+version = "0.1.0"
+description = ""
+authors = ["Murillo Welsi <murillo.welsi@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+playwright = "^1.49.0"
+pytest-base-url = "^2.1.0"
+pre-commit = "^4.0.1"
+pytest-xdist = "^3.6.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+ruff = "^0.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
