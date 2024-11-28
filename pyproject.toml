@@ -11,6 +11,7 @@ playwright = "^1.49.0"
 pytest-base-url = "^2.1.0"
 pre-commit = "^4.0.1"
 pytest-xdist = "^3.6.1"
+faker = "^33.1.0"
 
 
 [tool.poetry.group.dev.dependencies]

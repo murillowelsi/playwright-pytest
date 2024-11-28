@@ -9,10 +9,13 @@ class MainPage(BasePage):
 
     def __init__(self, page: Page) -> None:
         super().__init__(page)
-        self.banner_title = page.locator(MainPageLocators.BANNER_TITLE)
-        self.banner_subtitle = page.locator(MainPageLocators.BANNER_SUBTITLE)
-        self.link = page.get_by_role('link', name=MainPageLocators.LINK)
-        self.heading = page.get_by_role('heading', name=MainPageLocators.HEADING)
+        self.user_name_input = page.locator(MainPageLocators.USER_NAME_INPUT)
+        self.password_input = page.locator(MainPageLocators.USER_PASSWORD_INPUT)
+        self.submit_button = page.locator(MainPageLocators.LOGIN_BUTTON)
 
-    def click_link(self) -> None:
-        self.link.click()
+    def login(self, user_data: dict) -> None:
+        self.user_name_input.fill(
+            user_data['username']
+        )  # Correctly access the dictionary
+        self.password_input.fill(user_data['password'])
+        self.submit_button.click()

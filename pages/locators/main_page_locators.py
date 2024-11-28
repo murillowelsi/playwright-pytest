@@ -1,5 +1,5 @@
 class MainPageLocators:
-    BANNER_TITLE = '.highlight_gXVj'
-    BANNER_SUBTITLE = '.hero__title'
-    LINK = 'Get started'
-    HEADING = 'Installation'
+    BANNER_TITLE = 'Swag Labs'
+    USER_NAME_INPUT = '[data-test="username"]'
+    USER_PASSWORD_INPUT = '#password'
+    LOGIN_BUTTON = '[data-test="login-button"]'
