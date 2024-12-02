@@ -2,8 +2,10 @@ import pytest
 from faker import Faker
 from playwright.sync_api import Page
 
-from pages.page_objects.main_page import MainPage
+from pages.page_objects.login_page import LoginPage
 from pages.page_objects.products_page import ProductsPage
+
+faker = Faker()
 
 
 @pytest.fixture(scope='session')
@@ -18,16 +20,13 @@ def browser_context_args(browser_context_args):
 
 
 @pytest.fixture()
-def main_page(page: Page):
-    return MainPage(page)
+def login_page(page: Page):
+    return LoginPage(page)
 
 
 @pytest.fixture()
 def products_page(page: Page):
     return ProductsPage(page)
-
-
-faker = Faker()
 
 
 @pytest.fixture
@@ -43,4 +42,12 @@ def invalid_user_data():
     return {
         'username': faker.name(),
         'password': faker.password(length=16),
+    }
+
+
+@pytest.fixture
+def locked_out_user_data():
+    return {
+        'username': 'locked_out_user',
+        'password': 'secret_sauce',
     }

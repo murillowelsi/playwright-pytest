@@ -16,3 +16,11 @@ class ProductsPage(BasePage):
         expect(
             self.page.locator(ProductsPageLocators.SHOPPING_CART_ICON)
         ).to_be_visible()
+
+    def user_is_not_logged_in(self) -> None:
+        error_message = (
+            'Epic sadface: Username and password do not match any user in this service'
+        )
+
+        expect(self.page.locator('[data-test="error"]')).to_be_visible()
+        expect(self.page.locator('[data-test="error"]')).to_contain_text(error_message)
